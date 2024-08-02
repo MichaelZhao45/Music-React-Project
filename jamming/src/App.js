@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TrackList from "./components/TrackList";
+import Track from "./components/Track";
 
 function App() {
+
+  const [tracks] = useState([
+    {"id": 1, "name": "BLUE", "artist": "Billie Eilish", "album": "HIT ME HARD AND SOFT" }, 
+    {"id": 2, "name": "Gone", "artist": "Rose", "album": "R" },
+    {"id": 3, "name": "Happening Again", "artist": "Katherine Li", "album": "Happening Again" }
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ul>
+        <TrackList tracks={tracks} />
+      </ul>
     </div>
-  );
-}
+  )}
 
 export default App;
